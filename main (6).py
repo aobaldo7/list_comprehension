@@ -1,12 +1,14 @@
-def convert_to_snake_case(pascal_or_camel_cased_string):
+def convert_to_snake_case(pascal_or_camel_case_string):
+  converted_pascal_or_camel_sting=[
+    '_'+char.lower() if char.isupper()
+    else char 
+    for char in pascal_or_camel_case_string
+  ]
+  return ''.join(converted_pascal_or_camel_sting).strip('_')
 
-    snake_cased_char_list = [
-        '_' + char.lower() if char.isupper()
-        else char
-        for char in pascal_or_camel_cased_string
-    ]
+def main (pascal_or_camel_case_string):
+  print('Snake Case Converter:')
+  print(f'\nPascal or Camel case string: {pascal_or_camel_case_string}')
+  print(f'\nCovertion to snake case: {convert_to_snake_case(pascal_or_camel_case_string)}')
 
-    return ''.join(snake_cased_char_list).strip('_')
-
-def main():
-    print(convert_to_snake_case('aLongAndComplexString'))
+main('Klk_los_mios')
